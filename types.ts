@@ -23,10 +23,6 @@ export interface Message {
   text: string;
 }
 
-/**
- * Represents a suspect in the digital detective intelligence suite.
- * Added to resolve missing export member errors in components.
- */
 export interface Suspect {
   id: string;
   name: string;
@@ -40,6 +36,7 @@ export interface AnalysisResult {
   summary: string;
   verdict: 'AUTHENTIC' | 'FRAUDULENT' | 'SUSPICIOUS';
   score: number;
+  groundingSources?: { title: string, uri: string }[]; // New field for real web links
   lensA_Source: {
     status: 'PASS' | 'BREACHED';
     entities: SourceEntity[];
